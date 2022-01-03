@@ -28,7 +28,7 @@ public class MovieResource {
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.TEXT_PLAIN)
     public Response createMovie(String newMovie){
-        movies.Add(newMovie);
+        movies.add(newMovie);
         return Response.ok(movies).build();
     }
 
