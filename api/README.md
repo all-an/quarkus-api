@@ -59,10 +59,25 @@ Easily start your RESTful Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
 
+### Run
+
+```shell script
+  mvn compile quarkus:dev
+```
+
+
 ### Endpoint Tests
 
-> http://localhost:8080/movies  POST
+> /movies  POST
 - raw Text MyFirstMovie
->http://localhost:8080/movies/  GET
-> http://localhost:8080/movies/MyFirstMovie?movie=MyFirstUpdatedMovie PUT
+- 
+```shell script
+{
+  "id": 1,
+  "title": "MyFirstMovie"
+}
+```
+> /movies/  GET
+> /movies/MyFirstMovie?movie=MyFirstUpdatedMovie PUT
 - raw Text MyFirstUpdatedMovie
+
