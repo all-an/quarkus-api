@@ -1,8 +1,6 @@
 package org.acme;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
@@ -24,6 +22,14 @@ public class MovieResource {
     @Path("/size")
     public Integer countMovies(){
         return movies.size();
+    }
+
+    @POST
+    @Produces(MediaType.TEXT_PLAIN)
+    @Consumes(MediaType.TEXT_PLAIN)
+    public Response createMovie(String newMovie){
+        movies.Add(newMovie);
+        return Response.ok(movies).build();
     }
 
 }
