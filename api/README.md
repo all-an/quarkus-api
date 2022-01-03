@@ -58,3 +58,11 @@ If you want to learn more about building native executables, please consult http
 Easily start your RESTful Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+
+### Endpoint Tests
+
+> http://localhost:8080/movies  POST
+- raw Text MyFirstMovie
+>http://localhost:8080/movies/  GET
+> http://localhost:8080/movies/MyFirstMovie?movie=MyFirstUpdatedMovie PUT
+- raw Text MyFirstUpdatedMovie
