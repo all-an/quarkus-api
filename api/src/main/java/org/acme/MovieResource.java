@@ -27,20 +27,20 @@ public class MovieResource {
     }
 
     @POST
-    @Produces(MediaType.TEXT_PLAIN)
-    @Consumes(MediaType.TEXT_PLAIN)
-    public Response createMovie(String newMovie){
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response createMovie(Movie newMovie){
         movies.add(newMovie);
         return Response.ok(movies).build();
     }
-
+    /*
     @PUT
     @Path("{movietoUpdate}")
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.TEXT_PLAIN)
     public Response updateMovie(
-            @PathParam("movietoUpdate") String movieToUpdate,
-            @QueryParam("movie") String updateMovie){
+            @PathParam("movietoUpdate") Movie movieToUpdate,
+            @QueryParam("movie") Movie updateMovie){
         movies = movies.stream().map(movie -> {
             if(movie.equals(movieToUpdate)){
                 return updateMovie;
@@ -49,7 +49,7 @@ public class MovieResource {
         }).collect(Collectors.toList());
         return Response.ok(movies).build();
     }
-
+    */
     @DELETE
     @Path("{movieToDelete}")
     @Consumes(MediaType.TEXT_PLAIN)
